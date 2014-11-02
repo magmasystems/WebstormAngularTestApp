@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+Use data-ng-xxx attributes instead of ng-xxx attributes, because the former are for HTML5
+
+You can use the ng-init attribute to explicitly initialize some variables
+
+You can print out a variable by using {{ var }} or ng-bind="var"
+
+ng-show and ng-hide will hide/show an element
+
+Angular supports filters. For example, lastname|uppercase and firstname|lowercase
+-->
+<html data-ng-app="TheApp"
+      data-ng-init="[firstname='marc', lastname='adler']">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>First AngularJS App</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.css">
+    </head>
+
+    <body ng-controller="HelloAngularCtrl">
+        <!-- Add your site or application content here -->
+        <div class="jumbotron">
+            <p>Jumbotron</p>
+        </div>
+        <div class="container table-bordered">
+            <div class="row">
+                <div class="col-*-*">
+                    <p>{{ 843 / 40 }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2">
+                    <p><span data-ng-bind="firstname"></span></p>
+                </div>
+                <div class="col-lg-2">
+                    <p><span data-ng-bind="lastname"></span></p>
+                </div>
+            </div>
+        </div>
+        <div class="container table-bordered">
+            <div class="row">
+                <div class="col-lg-4">
+                    <p>{{ firstname }}</p>
+                </div>
+                <div class="col-lg-4">
+                    <p>{{ lastname }}</p>
+                </div>
+            </div>
+            <div class="row" ng-click=onMouseClicked() style="background: #b2dba1">
+                <div class="col-lg-6">
+                    <p ng-hide="hideFirstName">{{ firstname2 | uppercase}}</p>
+                </div>
+                <div class="col-lg-6">
+                    <p>{{ lastname2 | uppercase }}</p>
+                </div>
+            </div>
+        </div>
+
+        <table ng-repeat="familyInfo in families | orderBy:'city'" style="border: solid">
+            <tr>
+                <td>{{ familyInfo.city }}</td>
+                <td>
+                    <table ng-repeat="person in familyInfo.people | orderBy:'firstname'" style="border: thin">
+                        <tr>
+                            <td>{{ person.firstname }}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+
+        <script src="js/vendor/jquery-1.10.2.min.js"></script>
+        <script src="js/vendor/bootstrap.js"></script>
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="js/vendor/angular.js"></script>
+        <script src="js/myAngular/HelloAngularApp.js"></script>
+        <script src="js/myAngular/JsonFamilyReaderService.js"></script>
+        <script src="js/myAngular/HelloAngularCtrl.js"></script>
+    </body>
+</html>

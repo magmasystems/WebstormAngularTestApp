@@ -1,0 +1,20 @@
+[
+  {
+    "city": "Short Hills",
+    "people":
+    [
+      {"firstname": "Marc", "lastname": "Adler"},
+      {"firstname": "Kerry", "lastname": "Adler"},
+      {"firstname": "Paul", "lastname": "Adler"},
+      {"firstname": "Geeta", "lastname": "Acharya"}
+    ]
+  },
+  {
+    "city": "Albuquerque",
+    "people":
+    [
+      {"firstname": "Walter", "lastname": "White"},
+      {"firstname": "Skylar", "lastname": "White"}
+    ]
+  }
+]

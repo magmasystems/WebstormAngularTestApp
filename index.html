@@ -53,7 +53,7 @@ Angular supports filters. For example, lastname|uppercase and firstname|lowercas
             </div>
             <div class="row" ng-click=onMouseClicked() style="background: #b2dba1">
                 <div class="col-lg-6">
-                    <p ng-hide="hideFirstName">{{ firstname2 | uppercase}}</p>
+                    <p ng-hide="hideFirstName" style="background: {{backcolor}}">{{ firstname2 | uppercase}}</p>
                 </div>
                 <div class="col-lg-6">
                     <p>{{ lastname2 | uppercase }}</p>

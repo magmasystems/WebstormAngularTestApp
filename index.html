@@ -6,6 +6,8 @@ You can use the ng-init attribute to explicitly initialize some variables
 
 You can print out a variable by using {{ var }} or ng-bind="var"
 
+ng-model binds data between the view and the controller
+
 ng-show and ng-hide will hide/show an element
 
 Angular supports filters. For example, lastname|uppercase and firstname|lowercase
@@ -54,8 +56,7 @@ Angular supports filters. For example, lastname|uppercase and firstname|lowercas
             <div class="row" ng-click=onMouseClicked() style="background: #b2dba1">
                 <div class="col-lg-6">
                     <p ng-hide="hideFirstName" style="background: {{backcolor}}">{{ firstname2 | uppercase}}</p>
-                </div>
-                <div class="col-lg-6">
+
                     <p>{{ lastname2 | uppercase }}</p>
                 </div>
             </div>
@@ -73,6 +74,11 @@ Angular supports filters. For example, lastname|uppercase and firstname|lowercas
                 </td>
             </tr>
         </table>
+
+        <!-- ng-model ... Every letter we type here is reflected back into the firstname field -->
+        <div>
+            <input ng-model="firstname"/>
+        </div>
 
 
         <script src="js/vendor/jquery-1.10.2.min.js"></script>

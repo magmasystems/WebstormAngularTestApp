@@ -1,5 +1,9 @@
 /*
     Initialize the Angular module
     The [] in the second argument specifies dependent modules
+
+    The ngSanitize module is included from angular-sanitize.js
+
+    We need this so we can create an angular filter that returns HTML (the image)
  */
-var TheApp = angular.module('TheApp', requires=[]);
+var TheApp = angular.module('TheApp', ['CustomFilters', 'ngSanitize']);

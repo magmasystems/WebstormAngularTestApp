@@ -19,6 +19,16 @@ TheApp.controller('HelloAngularCtrl', function($scope, jsonFamilyReaderService)
             $scope.backcolor = colors[++idxColor % 4];
     };
 
+    $scope.onError = function(reason)
+    {
+       $scope.error = "We got an error";
+    };
+
+    $scope.onSearch = function(s)
+    {
+       alert("searching for " + s);
+    };
+
     $scope.families = null;
     jsonFamilyReaderService.getData(function(response)
     {

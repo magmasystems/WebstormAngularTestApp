@@ -68,7 +68,7 @@ Angular supports filters. For example, lastname|uppercase and firstname|lowercas
                 <td>
                     <table ng-repeat="person in familyInfo.people | orderBy:'firstname'" style="border: thin">
                         <tr>
-                            <td>{{ person.firstname }}</td>
+                            <td><span ng-bind-html="person.firstname | indianize" /></td>
                         </tr>
                     </table>
                 </td>
@@ -77,7 +77,10 @@ Angular supports filters. For example, lastname|uppercase and firstname|lowercas
 
         <!-- ng-model ... Every letter we type here is reflected back into the firstname field -->
         <div>
-            <input ng-model="firstname"/>
+            <form name="inputForm">
+                <input type="text" ng-model="firstname"/>
+                <input type="submit" ng-click="onSearch(firstname)">
+            </form>
         </div>
 
 
@@ -85,8 +88,11 @@ Angular supports filters. For example, lastname|uppercase and firstname|lowercas
         <script src="js/vendor/bootstrap.js"></script>
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
         <script src="js/vendor/angular.js"></script>
+        <script src="js/vendor/angular-sanitize.js"></script>
+
         <script src="js/myAngular/HelloAngularApp.js"></script>
-        <script src="js/myAngular/JsonFamilyReaderService.js"></script>
         <script src="js/myAngular/HelloAngularCtrl.js"></script>
+        <script src="js/myAngular/CustomFilters.js"></script>
+        <script src="js/myAngular/JsonFamilyReaderService.js"></script>
     </body>
 </html>

@@ -6,4 +6,19 @@
 
     We need this so we can create an angular filter that returns HTML (the image)
  */
-var TheApp = angular.module('TheApp', ['CustomFilters', 'ngSanitize']);
+var TheApp = angular
+    .module('TheApp', ['CustomFilters', 'ngSanitize', 'ngRoute'])
+    .config(function($routeProvider)
+    {
+        $routeProvider
+            .when("/names",
+            {
+                templateUrl: "names.html",
+                controller: "NamesController"
+            })
+            .when("/families",
+            {
+                templateUrl: "families.html",
+                controller: "FamiliesController"
+            })
+    });

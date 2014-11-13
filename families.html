@@ -1,0 +1,14 @@
+<div>
+    <table ng-repeat="familyInfo in families | orderBy:'city'" style="border: solid">
+        <tr>
+            <td>{{ familyInfo.city }}</td>
+            <td>
+                <table ng-repeat="person in familyInfo.people | orderBy:'firstname'" style="border: thin">
+                    <tr>
+                        <td><span ng-bind-html="person.firstname | indianize" ></span></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>

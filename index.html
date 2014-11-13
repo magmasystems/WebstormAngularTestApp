@@ -24,74 +24,33 @@ Angular supports filters. For example, lastname|uppercase and firstname|lowercas
         <link rel="stylesheet" href="css/bootstrap-theme.css">
     </head>
 
-    <body ng-controller="HelloAngularCtrl">
+    <body>
         <!-- Add your site or application content here -->
         <div class="jumbotron">
             <p>Jumbotron</p>
         </div>
-        <div class="container table-bordered">
-            <div class="row">
-                <div class="col-*-*">
-                    <p>{{ 843 / 40 }}</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-2">
-                    <p><span data-ng-bind="firstname"></span></p>
-                </div>
-                <div class="col-lg-2">
-                    <p><span data-ng-bind="lastname"></span></p>
-                </div>
-            </div>
-        </div>
-        <div class="container table-bordered">
-            <div class="row">
-                <div class="col-lg-4">
-                    <p>{{ firstname }}</p>
-                </div>
-                <div class="col-lg-4">
-                    <p>{{ lastname }}</p>
-                </div>
-            </div>
-            <div class="row" ng-click=onMouseClicked() style="background: #b2dba1">
-                <div class="col-lg-6">
-                    <p ng-hide="hideFirstName" style="background: {{backcolor}}">{{ firstname2 | uppercase}}</p>
 
-                    <p>{{ lastname2 | uppercase }}</p>
-                </div>
-            </div>
+        <ul>
+            <li><a href="#/names">Names</a></li>
+            <li><a href="#/families">Families</a></li>
+        </ul>
+
+        <div ng-view>
         </div>
 
-        <table ng-repeat="familyInfo in families | orderBy:'city'" style="border: solid">
-            <tr>
-                <td>{{ familyInfo.city }}</td>
-                <td>
-                    <table ng-repeat="person in familyInfo.people | orderBy:'firstname'" style="border: thin">
-                        <tr>
-                            <td><span ng-bind-html="person.firstname | indianize" /></td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
-
-        <!-- ng-model ... Every letter we type here is reflected back into the firstname field -->
-        <div>
-            <form name="inputForm">
-                <input type="text" ng-model="firstname"/>
-                <input type="submit" ng-click="onSearch(firstname)">
-            </form>
-        </div>
-
+        <hr/>
 
         <script src="js/vendor/jquery-1.10.2.min.js"></script>
         <script src="js/vendor/bootstrap.js"></script>
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
         <script src="js/vendor/angular.js"></script>
+        <script src="js/vendor/angular-route.js"></script>
         <script src="js/vendor/angular-sanitize.js"></script>
 
         <script src="js/myAngular/HelloAngularApp.js"></script>
         <script src="js/myAngular/HelloAngularCtrl.js"></script>
+        <script src="js/myAngular/NamesController.js"></script>
+        <script src="js/myAngular/FamiliesController.js"></script>
         <script src="js/myAngular/CustomFilters.js"></script>
         <script src="js/myAngular/JsonFamilyReaderService.js"></script>
     </body>

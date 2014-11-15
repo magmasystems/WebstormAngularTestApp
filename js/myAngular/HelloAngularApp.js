@@ -21,4 +21,9 @@ var TheApp = angular
                 templateUrl: "families.html",
                 controller: "FamiliesController"
             })
+            .when("/names/:username",
+            {
+                templateUrl: "user.html",
+                controller: "UserController"
+            })
     });

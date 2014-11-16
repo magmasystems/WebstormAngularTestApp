@@ -10,6 +10,7 @@ TheApp.controller('FamiliesController', function($scope, jsonFamilyReaderService
     };
 
     $scope.families = null;
+    $scope.count = 0;
 
 /*
     jsonFamilyReaderService.getData(function(response)
@@ -24,6 +25,10 @@ TheApp.controller('FamiliesController', function($scope, jsonFamilyReaderService
         .then(function(response)
         {
             $scope.families = response.data;
+            jsonFamilyReaderService3.countdown().then(
+                function(response) { $scope.count = response.foo;},
+                function(error) {},
+                function (notifyData) { $scope.count =  notifyData;});
         });
 });
 
